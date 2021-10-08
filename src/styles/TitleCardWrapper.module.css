@@ -1,0 +1,14 @@
+.wrapper{
+    border-left: 7px solid yellow;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-left: 10px;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.title{
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+}

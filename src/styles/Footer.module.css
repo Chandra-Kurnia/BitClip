@@ -1,0 +1,23 @@
+.wrapper{
+    margin-top: 150px;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    border-top: 1px solid white;
+    padding: 20px;
+    border-top-width: 3px;
+    text-align: center;
+}
+
+.socialWrapper{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cpr{
+    display: block;
+    color: white;
+    font-size: small;
+    padding-top: 20px;
+}

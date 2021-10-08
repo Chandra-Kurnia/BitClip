@@ -1,0 +1,12 @@
+.cardWrapper, .cardWrapperRecent{
+    display: flex;
+    background-color: black;
+    width: 100%;
+    justify-content: space-between;
+    /* padding: 10px; */
+    flex-wrap: wrap;
+}
+
+.cardWrapperRecent{
+    justify-content: flex-start;
+}

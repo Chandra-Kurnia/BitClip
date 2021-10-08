@@ -1,0 +1,46 @@
+.button{
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.btnClose{
+    background-color: yellow;
+}
+
+.btnClose:hover{
+    background-color: rgb(190, 190, 0);
+}
+
+.btnDetail{
+    background-color: rgb(0, 225, 255);
+}
+
+.btnDetail:hover{
+    background-color: rgb(9, 123, 138);
+}
+
+.genre{
+    text-align: center;
+    display: inline-block;
+    min-width: 120px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    color: white;
+    background-color: black;
+    border-radius: 50px;
+    border: 1px solid white;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: 'mulish';
+    src: url('../assets/fonts/Mulish-VariableFont_wght.ttf');
+    font-style: normal;
+    font-display: swap;
+  }
