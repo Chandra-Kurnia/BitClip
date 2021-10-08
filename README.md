@@ -54,7 +54,7 @@
 ## About The Project
 
 <p align="justify">
-<b>ClipBit</b> is a movie search application that uses the RESTful API from omdb.com. This application provides features, search, details, add watchlist, etc.
+<b>ClipBit</b> is a simple movie search application that uses the RESTful API from omdb.com. This application provides features, search, details, add watchlist, etc.
 </p>
 
 ### Build With
@@ -108,15 +108,9 @@ npm start
 ## Screenshots
 
 <div align="center">
-    <img width="250" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/1login.png">
-    <img width="250" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/2register.png">
-    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/3home.png">
-    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/5show.png">
-    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/4productbycategory.png">
-    <img width="250" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/6cart.png">
-    <img width="250" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/7order.png">
-    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/8profile.png">
-    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/9addproduct.png">
+    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ClipBit/home.png">
+    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ClipBit/showPoster.png">
+    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ClipBit/detail.png">
 </div>
 
 ## Contact

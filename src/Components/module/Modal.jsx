@@ -3,6 +3,7 @@ import styles from '../../styles/Modal.module.css';
 // import dummyBatman from '../../assets/dummyBatman.jpg';
 import Button from '../base/Button'
 import { useHistory } from 'react-router';
+import PropTypes from 'prop-types'
 
 const Modal = (props) => {
   const {push} = useHistory()
@@ -44,5 +45,16 @@ const Modal = (props) => {
     </div>
   );
 };
+
+Modal.propTypes = {
+  poster: PropTypes.string,
+  Title: PropTypes.string,
+  released: PropTypes.string,
+  runtime: PropTypes.string,
+  genre: PropTypes.string,
+  imdbID: PropTypes.string,
+  closeButton: PropTypes.func
+
+}
 
 export default Modal;

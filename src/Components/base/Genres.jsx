@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Genres = (props) => {
     return (
@@ -6,6 +7,10 @@ const Genres = (props) => {
             {props.text}
         </span>
     )
+}
+
+Genres.propTypes = {
+    text: PropTypes.string
 }
 
 export default Genres

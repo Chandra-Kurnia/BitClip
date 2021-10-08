@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../styles/Card.module.css';
 import { useHistory } from 'react-router';
+import PropTypes from 'prop-types'
 
 const Card = (props) => {
     const {push} = useHistory()
@@ -27,5 +28,17 @@ const Card = (props) => {
     </div>
   );
 };
+
+Card.propType = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  poster: PropTypes.string,
+  year: PropTypes.string,
+  tittle: PropTypes.string,
+  type: PropTypes.string,
+  watchlist: PropTypes.string,
+  handleWL: PropTypes.func,
+  imdbID: PropTypes.string
+}
 
 export default Card;

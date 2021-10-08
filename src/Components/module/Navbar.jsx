@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../styles/Navbar.module.css'
 import { useHistory } from 'react-router'
+import PropTypes from 'prop-types'
 
 const Navbar = (props) => {
   const {push} = useHistory()
@@ -14,6 +15,10 @@ const Navbar = (props) => {
         </div>
       </nav>
     )
+}
+
+Navbar.propType = {
+  handleSearch: PropTypes.func
 }
 
 export default Navbar
