@@ -4,7 +4,7 @@
   <a href="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/logo.png" alt="Logo" width="180" height="180">
   </a>
 
-  <h3 align="center">ClipBit</h3>
+  <h3 align="center">BitClip</h3>
 
   <p align="center">
     movie search app built using react js
@@ -54,7 +54,7 @@
 ## About The Project
 
 <p align="justify">
-<b>ClipBit</b> is a simple movie search application that uses the RESTful API from omdb.com. This application provides features, search, details, add watchlist, etc.
+<b>BitClip</b> is a simple movie search application that uses the RESTful API from omdb.com. This application provides features, search, details, add watchlist, etc.
 </p>
 
 ### Build With
