@@ -131,7 +131,7 @@ const Home = () => {
         </div>
         <TittleCardWrapper text="Movie List" />
         <div className={styles.cardWrapper}>
-          {movies.length > 0 &&
+          {movies.length > 0 ?
             movies.map((movie, index) => (
               <Fade>
                 <Card
@@ -144,7 +144,7 @@ const Home = () => {
                   handleWL={() => handlewatchlist(movie)}
                 />
               </Fade>
-            ))}
+            )) : <span className='text-white'>Movie Not Found</span>}
         </div>
         {loading && ( <span className='text-white'>Loading...</span> )}
         {/* <button className="btn btn-warning mt-3" onClick={() => setPage(Page + 1)}>
