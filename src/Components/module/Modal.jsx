@@ -12,8 +12,9 @@ const Modal = (props) => {
   const loading = useSelector(state => state.loading)
   return (
     <div className={styles.wrapper}>
+      {loading === true ?
+      <Loading/> : 
       <div className={styles.modal}>
-      {loading === true && <Loading/>}
         <div className="d-flex flex-wrap h-100">
           <div className={styles.poster}>
             <img src={props.poster} alt="" />
@@ -46,6 +47,7 @@ const Modal = (props) => {
           </div>
         </div>
       </div>
+      }
     </div>
   );
 };

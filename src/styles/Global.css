@@ -22,7 +22,7 @@
 }
 
 .wrapperMargin{
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
 .genre{
@@ -62,3 +62,9 @@
     font-style: normal;
     font-display: swap;
   }
+
+@media (min-width: 992px) {
+    .wrapperMargin{
+        padding-top: 80px;
+    }
+}

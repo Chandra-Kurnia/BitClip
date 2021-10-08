@@ -10,7 +10,7 @@
 }
 
 .socialWrapper{
-    width: 15%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
 }
@@ -21,3 +21,23 @@
     font-size: small;
     padding-top: 20px;
 }
+
+@media (min-width: 576px) {
+    .socialWrapper{
+        width: 30%;
+    }
+}
+
+@media (min-width: 768px) {
+    .socialWrapper{
+        width: 20%;
+    }
+}
+
+@media (min-width: 992px) {
+    .socialWrapper{
+        width: 15%;
+    }
+}
+
+@media (min-width: 1200px) {}

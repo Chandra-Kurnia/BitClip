@@ -9,7 +9,7 @@ const Navbar = (props) => {
         <nav className="navbar navbar-dark bg-dark fixed-top">
         <div className="container">
           <span onClick={() => push('/')} className="navbar-brand mb-0 cursor-pointer">ClipBit</span>
-          <span>
+          <span className={styles.inputWrapper}>
               <input onChange={props.handleSearch} type="text" placeholder='Search Movie' className={styles.searchInput}/>
           </span>
         </div>
