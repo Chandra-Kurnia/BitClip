@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/logo.png" alt="Logo" width="180" height="180">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">ClipBit</h3>
 
-## Available Scripts
+  <p align="center">
+    movie search app built using react js
+    <br />
+    <a href="https://github.com/Chandra-Kurnia/BitClip"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://bitclip.vercel.app/">View Demo</a>
+    ·
+    <a href="https://github.com/Chandra-Kurnia/BitClip">Report Bug</a>
+    ·
+    <a href="https://github.com/Chandra-Kurnia/BitClip">Request Feature</a>
+  </p>
+</p>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+        <ol>
+            <li>
+                <a href="#build-with">Build With</a>
+            </li>
+        </ol>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ol>
+        <li>
+          <a href="#installation">Installation</a>
+        </li>
+        <li>
+          <a href="#prerequisites">Prerequisites</a>
+        </li>
+        <li>
+          <a href="#related-project">Related Project</a>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-### `npm start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p align="justify">
+<b>ClipBit</b> is a movie search application that uses the RESTful API from omdb.com. This application provides features, search, details, add watchlist, etc.
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Build With
 
-### `npm test`
+* [JavaScript](https://www.javascript.com/)
+* [React Js](reactjs.org/)
+* [Redux](https://redux.js.org/)
+* [Bootsrap 5](getbootstrap.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is an example of how to list things you need to use the software and how to install them.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [Node Js](https://nodejs.org/en/download/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. Clone Repository
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+git clone https://github.com/Chandra-Kurnia/BitClip.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Go To Folder Repo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+cd BitClip
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Install Module
 
-## Learn More
+```sh
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Edit env for API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+REACT_APP_SERVER_URL='https://www.omdbapi.com'
+REACT_APP_API_KEY=[api key from omdb.com]
+```
 
-### Code Splitting
+5. Start website
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```sh
+npm start
+```
 
-### Analyzing the Bundle Size
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<div align="center">
+    <img width="250" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/1login.png">
+    <img width="250" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/2register.png">
+    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/3home.png">
+    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/5show.png">
+    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/4productbycategory.png">
+    <img width="250" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/6cart.png">
+    <img width="250" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/7order.png">
+    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/8profile.png">
+    <img width="700" src="https://raw.githubusercontent.com/Chandra-Kurnia/assets/main/ecommerce/9addproduct.png">
+</div>
 
-### Making a Progressive Web App
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+My Email : candrakurniawan.dev@gmail.com
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Project Link: [https://github.com/Chandra-Kurnia/BitClip](https://github.com/Chandra-Kurnia/BitClip)

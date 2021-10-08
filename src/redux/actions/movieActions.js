@@ -2,8 +2,14 @@ import axiosInstance from '../../configs/axios';
 
 export const getAllMovies = (page, keyword) => async (dispatch, getState) => {
   try {
+    const movies = getState().movies;
     const dataMovie = await axiosInstance.get(`?apikey=${process.env.REACT_APP_API_KEY}&s=${keyword}&page=${page}`);
-    dispatch({type: 'getAllMovies', payload: dataMovie.data.Search})
+    const findMovie = movies.find((element) =>{
+      return element.imdbID === dataMovie.data.Search[0].imdbID
+    })
+    if(!findMovie){
+      dispatch({type: 'getAllMovies', payload: dataMovie.data.Search})
+    }
   } catch (error) {
     console.log(error);
   }
