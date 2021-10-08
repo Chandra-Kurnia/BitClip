@@ -21,6 +21,10 @@
     background-color: rgb(9, 123, 138);
 }
 
+.wrapperMargin{
+    padding-top: 80px;
+}
+
 .genre{
     text-align: center;
     display: inline-block;

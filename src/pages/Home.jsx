@@ -25,17 +25,16 @@ const Home = () => {
   }, [Page]);
 
   document.addEventListener('scroll', () => {
-    console.log(Math.ceil(window.scrollY));
-    console.log(window.outerHeight);
-    console.log(document.body.clientHeight);
-    // console.log(Math.ceil(window.scrollY) + window.outerHeight === document.body.clientHeight);
-    if ((Math.ceil(window.scrollY) + window.outerHeight) === document.body.clientHeight) {
+    // console.log(Math.ceil(window.scrollY));
+    // console.log(window.outerHeight);
+    // console.log(document.body.clientHeight);
+    // console.log(Math.ceil(window.scrollY) + window.innerHeight === document.body.clientHeight);
+    if ((Math.ceil(window.scrollY) + window.innerHeight) === document.body.clientHeight) {
       if (Page === 100) {
         setPage(1);
       } else {
         setPage(Page + 1);
       }
-      // console.log('true');
     }
   });
 
@@ -83,7 +82,7 @@ const Home = () => {
         />
       )}
       <Navbar handleSearch={(e) => handleSearch(e)} />
-      <div className="container">
+      <div className="container wrapperMargin">
         <TittleCardWrapper text="Recently Viewed" />
         <div className={`${styles.cardWrapperRecent} mb-5`}>
           {recentlyViewed.length > 0 ? (
