@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import Card from '../Components/module/Card';
 import styles from '../styles/Home.module.css';
 // import dummyBatman from '../assets/dummyBatman.jpg';
@@ -9,7 +9,7 @@ import Navbar from '../Components/module/Navbar';
 import TittleCardWrapper from '../Components/base/TittleCardWrapper';
 import Modal from '../Components/module/Modal';
 import Footer from '../Components/module/Footer';
-import Fade from 'react-reveal'
+import Fade from 'react-reveal';
 
 const Home = () => {
   const [Page, setPage] = useState(1);
@@ -17,25 +17,27 @@ const Home = () => {
   const [showModal, setshowModal] = useState(0);
   const movies = useSelector((state) => state.movies);
   const movie = useSelector((state) => state.movie);
-  const recentlyViewed = useSelector(state => state.recentlyViewed)
-  const WatchList = useSelector(state => state.WatchList)
+  const recentlyViewed = useSelector((state) => state.recentlyViewed);
+  const WatchList = useSelector((state) => state.WatchList);
   const dispatch = useDispatch();
-  const InfiniteScrollRef = useRef()
   useEffect(() => {
     dispatch(getAllMovies(Page, keyword));
   }, [Page]);
 
-  // useEffect(() => {
-  //   window.onscroll(() => {
-  //     if(window.scrollTop() + window.innerHeight == document.height())
-  //   })
-  // }, [])
-
-  //   $(window).scroll(function() {
-//     if($(window).scrollTop() + $(window).height() == $(document).height()) {
-//         alert("bottom!");
-//     }
-//  });
+  document.addEventListener('scroll', () => {
+    console.log(Math.ceil(window.scrollY));
+    console.log(window.outerHeight);
+    console.log(document.body.clientHeight);
+    // console.log(Math.ceil(window.scrollY) + window.outerHeight === document.body.clientHeight);
+    if ((Math.ceil(window.scrollY) + window.outerHeight) === document.body.clientHeight) {
+      if (Page === 100) {
+        setPage(1);
+      } else {
+        setPage(Page + 1);
+      }
+      // console.log('true');
+    }
+  });
 
   const handleSearch = (e) => {
     if (e.target.value === '') {
@@ -54,64 +56,74 @@ const Home = () => {
   };
 
   const handlewatchlist = (movieToWL) => {
-    dispatch(UpdateWatchList(movieToWL))
-  }
+    dispatch(UpdateWatchList(movieToWL));
+  };
 
-  const handleScroll = () => {
-    if(InfiniteScrollRef.current){
-      const { scrollTop, scrollHeight, clientHeight } = InfiniteScrollRef.current;
-      if(scrollTop + clientHeight === scrollHeight){
-        console.log('sudah sampai bawah');
-      }
-    }
-  }
+  // const handleScroll = () => {
+  //   if(InfiniteScrollRef.current){
+  //     const { scrollTop, scrollHeight, clientHeight } = InfiniteScrollRef.current;
+  //     if(scrollTop + clientHeight === scrollHeight){
+  //       console.log('sudah sampai bawah');
+  //     }
+  //   }
+  // }
 
   return (
     <div>
       {showModal === 1 && (
         <Modal
-        Year={movie.Year}
-        Title={movie.Title}
-        released={movie.Released}
-        runtime={movie.Runtime}
-        genre={movie.Genre}
-        poster={movie.Poster}
-        imdbID={movie.imdbID}
-        closeButton={() => setshowModal(0)}
+          Year={movie.Year}
+          Title={movie.Title}
+          released={movie.Released}
+          runtime={movie.Runtime}
+          genre={movie.Genre}
+          poster={movie.Poster}
+          imdbID={movie.imdbID}
+          closeButton={() => setshowModal(0)}
         />
       )}
       <Navbar handleSearch={(e) => handleSearch(e)} />
-      <div className="container mt-5 pt-4">
+      <div className="container">
         <TittleCardWrapper text="Recently Viewed" />
         <div className={`${styles.cardWrapperRecent} mb-5`}>
-          {recentlyViewed.length > 0 ? recentlyViewed.slice(0,5).map((movieVIewed, index) => (
-            <Card
-            className='me-4'
-            onClick={() => handleModal(movieVIewed.imdbID)}
-            key={index}
-            poster={movieVIewed.Poster}
-            tittle={movieVIewed.Title}
-            year={movieVIewed.Year}
-            type={movieVIewed.Type}
-            handleWL={() => handlewatchlist(movieVIewed)}
-            />
-          )) : <span className='text-white'>You haven't seen a movie</span>}
+          {recentlyViewed.length > 0 ? (
+            recentlyViewed
+              .slice(0, 5)
+              .map((movieVIewed, index) => (
+                <Card
+                  className="me-4"
+                  onClick={() => handleModal(movieVIewed.imdbID)}
+                  key={index}
+                  poster={movieVIewed.Poster}
+                  tittle={movieVIewed.Title}
+                  year={movieVIewed.Year}
+                  type={movieVIewed.Type}
+                  handleWL={() => handlewatchlist(movieVIewed)}
+                />
+              ))
+          ) : (
+            <span className="text-white">You haven't seen a movie</span>
+          )}
         </div>
         <TittleCardWrapper text="My Watchlist" />
         <div className={`${styles.cardWrapperRecent} mb-5`}>
-        {WatchList.length > 0 ? WatchList.map((movieWatchlist, index) => (
-            <Card
-            watchlist={true}
-            className='me-4'
-            onClick={() => handleModal(movieWatchlist.imdbID)}
-            key={index}
-            poster={movieWatchlist.Poster}
-            tittle={movieWatchlist.Title}
-            year={movieWatchlist.Year}
-            type={movieWatchlist.Type}
-            imdbID={movieWatchlist.imdbID}
-            />
-          )) : <span className='text-white'>you haven't added the movie to the watchlist</span>}
+          {WatchList.length > 0 ? (
+            WatchList.map((movieWatchlist, index) => (
+              <Card
+                watchlist={true}
+                className="me-4"
+                onClick={() => handleModal(movieWatchlist.imdbID)}
+                key={index}
+                poster={movieWatchlist.Poster}
+                tittle={movieWatchlist.Title}
+                year={movieWatchlist.Year}
+                type={movieWatchlist.Type}
+                imdbID={movieWatchlist.imdbID}
+              />
+            ))
+          ) : (
+            <span className="text-white">you haven't added the movie to the watchlist</span>
+          )}
         </div>
         <TittleCardWrapper text="Movie List" />
         <div className={styles.cardWrapper}>
@@ -127,7 +139,7 @@ const Home = () => {
                   type={movie.Type}
                   handleWL={() => handlewatchlist(movie)}
                 />
-            </Fade>
+              </Fade>
             ))}
         </div>
         <button className="btn btn-warning mt-3" onClick={() => setPage(Page + 1)}>
