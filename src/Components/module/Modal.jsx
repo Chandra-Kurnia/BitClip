@@ -4,12 +4,16 @@ import styles from '../../styles/Modal.module.css';
 import Button from '../base/Button'
 import { useHistory } from 'react-router';
 import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux';
+import Loading from '../base/Loading';
 
 const Modal = (props) => {
   const {push} = useHistory()
+  const loading = useSelector(state => state.loading)
   return (
     <div className={styles.wrapper}>
       <div className={styles.modal}>
+      {loading === true && <Loading/>}
         <div className="d-flex flex-wrap h-100">
           <div className={styles.poster}>
             <img src={props.poster} alt="" />

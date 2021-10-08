@@ -9,11 +9,13 @@ import TittleCardWrapper from '../Components/base/TittleCardWrapper';
 import Genres from '../Components/base/Genres';
 import Navbar from '../Components/module/Navbar';
 import Footer from '../Components/module/Footer';
+import Loading from '../Components/base/Loading';
 
 const ShowMovie = () => {
   const {imdbID} = useParams();
   const dispatch = useDispatch();
   const movie = useSelector((state) => state.movie);
+  const loading = useSelector(state => state.loading)
 
   useEffect(() => {
     dispatch(getmovie(imdbID));
@@ -25,6 +27,7 @@ const ShowMovie = () => {
 
   return (
     <Fragment>
+      {loading === true && <Loading/>}
       <Navbar />
       <div className={styles.wrapper}>
         <div className="container">

@@ -2,7 +2,8 @@ const initialState = {
     movies: [],
     movie: [],
     recentlyViewed: [],
-    WatchList: []
+    WatchList: [],
+    loading: false
 }
 
 const movieReducer = (state = initialState, action) => {
@@ -37,6 +38,11 @@ const movieReducer = (state = initialState, action) => {
                     ...state.WatchList,
                     action.payload
                 ]
+            }
+        case 'loading':
+            return{
+                ...state,
+                loading: action.payload
             }
         default:
             return state;

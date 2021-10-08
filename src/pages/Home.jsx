@@ -10,6 +10,7 @@ import TittleCardWrapper from '../Components/base/TittleCardWrapper';
 import Modal from '../Components/module/Modal';
 import Footer from '../Components/module/Footer';
 import Fade from 'react-reveal';
+import Loading from '../Components/base/Loading';
 
 const Home = () => {
   const [Page, setPage] = useState(1);
@@ -17,6 +18,7 @@ const Home = () => {
   const [showModal, setshowModal] = useState(0);
   const movies = useSelector((state) => state.movies);
   const movie = useSelector((state) => state.movie);
+  const loading = useSelector(state => state.loading)
   const recentlyViewed = useSelector((state) => state.recentlyViewed);
   const WatchList = useSelector((state) => state.WatchList);
   const dispatch = useDispatch();
@@ -24,12 +26,12 @@ const Home = () => {
     dispatch(getAllMovies(Page, keyword));
   }, [Page]);
 
+  // console.log(Math.ceil(window.scrollY));
+  // console.log(window.outerHeight);
+  // console.log(document.body.clientHeight);
+  // console.log(Math.ceil(window.scrollY) + window.innerHeight === document.body.clientHeight);
   document.addEventListener('scroll', () => {
-    // console.log(Math.ceil(window.scrollY));
-    // console.log(window.outerHeight);
-    // console.log(document.body.clientHeight);
-    // console.log(Math.ceil(window.scrollY) + window.innerHeight === document.body.clientHeight);
-    if ((Math.ceil(window.scrollY) + window.innerHeight) === document.body.clientHeight) {
+    if ((Math.ceil(window.scrollY) + window.innerHeight) === document.body.clientHeight && loading === false) {
       if (Page === 100) {
         setPage(1);
       } else {
@@ -67,8 +69,11 @@ const Home = () => {
   //   }
   // }
 
+  console.log(loading);
+
   return (
     <div>
+      {loading === true && <Loading/>}
       {showModal === 1 && (
         <Modal
           Year={movie.Year}
@@ -141,9 +146,10 @@ const Home = () => {
               </Fade>
             ))}
         </div>
-        <button className="btn btn-warning mt-3" onClick={() => setPage(Page + 1)}>
+        {loading && ( <span className='text-white'>Loading...</span> )}
+        {/* <button className="btn btn-warning mt-3" onClick={() => setPage(Page + 1)}>
           Show More
-        </button>
+        </button> */}
       </div>
       <Footer />
     </div>
