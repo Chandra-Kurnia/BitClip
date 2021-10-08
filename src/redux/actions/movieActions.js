@@ -21,11 +21,14 @@ export const getAllMovies = (page, keyword) => async (dispatch, getState) => {
 
 export const searchMovies = (keyword) => async (dispatch) => {
   try {
+    dispatch({type: 'loading', payload: true})
     const dataMovie = await axiosInstance.get(`?apikey=${process.env.REACT_APP_API_KEY}&s=${keyword}&page=1`);
     if(dataMovie?.data?.Search && dataMovie.data.Search.length > 0){
       dispatch({type: 'searchMovie', payload: dataMovie.data.Search})
+      dispatch({type: 'loading', payload: false})
     }else{
       dispatch({type: 'searchMovie', payload: []})
+      dispatch({type: 'loading', payload: false})
     }
   } catch (error) {
     console.log(error);
